@@ -12,3 +12,7 @@ add info in the database section of settings folder
 
 install python-decouple to hide sensitive information. refer  website for more information
 
+message framework to show any message. We don't need to import it using context in any html page to show because it is in the context_processor (settings->context_preprocessor) which make it available globally in all the html files.
+
+make some changes in the settings to use messages see at the last of setting page where tags to add class dynamically on different message status.
+
