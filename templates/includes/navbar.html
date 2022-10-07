@@ -29,14 +29,22 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+                        {% if user.is_authenticated %}
                         <div class="login-option">
-                            <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in"
-                                data-toggle="modal" href="#user-register">Login</a>
-                            <a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'accounts:registerUser' %}">Register</a>
+                            <a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'accounts:myAccount' %}">MY ACCOUNT</a>
+                            <a class="cs-color cs-popup-joinus-btn login-popup  text-danger" href="{% url 'accounts:logout' %}">LOGOUT</a></div>
+                        {% else %}
+                        <div class="login-option">
+                            <a class="cs-color cs-popup-joinus-btn login-popup"
+                                href="{% url 'accounts:login' %}">Login</a>
+                            <a class="cs-color cs-popup-joinus-btn login-popup"
+                                href="{% url 'accounts:registerUser' %}">Register</a>
                             <a class="get-start-btn" href="{% url 'accounts:registerVendor' %}">
                                 Register
                                 Restaurant </a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
